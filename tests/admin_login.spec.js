@@ -2,9 +2,11 @@ const { test, expect } = require('@playwright/test');
 const {iStep} = require('../src/utils/steps-utils');
 const { AdminLoginPage } = require('../src/page/admin-login-page');
 const { DashboardPage } = require('../src/page/dashboard-page');
+
 let adminLoginPage;
 let dashboardPage;
-test.beforeAll('Before all', async ({page}) =>{
+
+test.beforeEach('Before each', async ({page}) =>{
   adminLoginPage= new AdminLoginPage(page);
   dashboardPage = new DashboardPage(page);
 })
